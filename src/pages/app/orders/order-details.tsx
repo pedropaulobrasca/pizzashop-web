@@ -98,13 +98,13 @@ export function OrderDetails() {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell>Pizza Peperoni G</TableCell>
+              <TableCell>p peperoni g</TableCell>
               <TableCell className="text-right">2</TableCell>
               <TableCell className="text-right">R$ 65,00</TableCell>
               <TableCell className="text-right">R$ 130,00</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Pizza choc. c/ morango G</TableCell>
+              <TableCell>p choc c morango g</TableCell>
               <TableCell className="text-right">2</TableCell>
               <TableCell className="text-right">R$ 65,00</TableCell>
               <TableCell className="text-right">R$ 130,00</TableCell>
