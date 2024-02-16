@@ -17,7 +17,7 @@ export function App() {
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />
         </QueryClientProvider>
-        <Toaster />
+        <Toaster richColors />
       </ThemeProvider>
     </HelmetProvider>
   )
