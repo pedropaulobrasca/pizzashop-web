@@ -1,3 +1,4 @@
+import { Button } from './ui/button'
 import {
   Pagination,
   PaginationContent,
@@ -13,14 +14,18 @@ export interface PaginationProps {
   pageIndex: number
   totalCount: number
   perPage: number
+  onPageChange: (pageIndex: number) => Promise<void> | void
 }
 
 export function PaginationComponent({
   pageIndex,
   perPage,
   totalCount,
+  onPageChange,
 }: PaginationProps) {
   const pages = Math.ceil(totalCount / perPage) || 1
+
+  console.log(pageIndex)
 
   return (
     <div className="flex flex-1 items-center justify-between">
@@ -34,25 +39,24 @@ export function PaginationComponent({
           </div>
           <Separator orientation="vertical" className="h-6" />
           <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious href="#" />
+            <PaginationItem hidden={pageIndex === 0} className="cursor-pointer">
+              <PaginationPrevious onClick={() => onPageChange(pageIndex - 1)} />
             </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>
-                2
+            <PaginationItem hidden={pageIndex === 0}>
+              <PaginationLink onClick={() => onPageChange(pageIndex - 1)}>
+                {pageIndex}
               </PaginationLink>
             </PaginationItem>
             <PaginationItem>
-              <PaginationLink href="#">3</PaginationLink>
+              <PaginationLink isActive>{pageIndex + 1}</PaginationLink>
             </PaginationItem>
             <PaginationItem>
-              <PaginationEllipsis />
+              <PaginationLink onClick={() => onPageChange(pageIndex + 1)}>
+                {pageIndex + 2}
+              </PaginationLink>
             </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
+            <PaginationItem className="cursor-pointer">
+              <PaginationNext onClick={() => onPageChange(pageIndex + 1)} />
             </PaginationItem>
           </PaginationContent>
         </Pagination>
