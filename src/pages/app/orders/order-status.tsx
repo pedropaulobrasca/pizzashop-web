@@ -12,7 +12,7 @@ interface OrderStatusProps {
 const orderStatusMap: Record<OrderStatus, string> = {
   pending: 'Pendente',
   canceled: 'Cancelado',
-  processing: 'Processando',
+  processing: 'Em preparo',
   delivering: 'Em entrega',
   delivered: 'Entregue',
 }

@@ -1,8 +1,6 @@
-import { Button } from './ui/button'
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -24,8 +22,6 @@ export function PaginationComponent({
   onPageChange,
 }: PaginationProps) {
   const pages = Math.ceil(totalCount / perPage) || 1
-
-  console.log(pageIndex)
 
   return (
     <div className="flex flex-1 items-center justify-between">
